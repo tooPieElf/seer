@@ -15,17 +15,18 @@ class Card extends Component {
         year:'',
         cvv:'',
         pin:''
-    }
+    };
     nextStep = () =>{
         const { step }=this.state;
         this.setState({
             step: step+1
         });
-    }
+    };
 
-    handleChange = input=> e =>{
-        this.setState({[input]: e.target.value});
-    }
+    handleChange = e =>{
+        this.setState({[e.target.name]: e.target.value});
+        console.log(this.state);
+    };
     render() {
         const{ step }=this.state;
         const{ fullName, email, amount, cardNumber, month, year, cvv, pin} = this.state;
@@ -45,8 +46,8 @@ class Card extends Component {
                 );
             case 3:
                 return(
-                    <CardUserProfile />
-                );
+                   <h2> step three</h2>
+                )
             case 4:
                 return(
                     <CardSuccess />
