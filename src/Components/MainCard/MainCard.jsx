@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import CardUserProfile from '../CardUserProfile/CardUserProfile'
 import UserDetails from '../UserDetails/UserDetails'
 import CardSuccess from '../CardSuccess/CardSuccess'
+import CardBankList from "../CardBankList/CardBankList";
 
 class Card extends Component {
 
@@ -23,8 +24,8 @@ class Card extends Component {
         });
     };
 
-    handleChange = e =>{
-        this.setState({[e.target.name]: e.target.value});
+    handleChange =input=> e =>{
+        this.setState({[input]: e.target.value});
         console.log(this.state);
     };
     render() {
@@ -42,7 +43,10 @@ class Card extends Component {
                 );
             case 2:
                 return(
-                    <CardUserProfile />
+                    <CardBankList
+                        nextStep = {this.nextStep}
+                        handleChange = {this.handleChange}
+                    />
                 );
             case 3:
                 return(

@@ -8,3 +8,38 @@
   height: 100vh;
   flex-direction: column;
 }
+.card-container {
+  width: 25rem;
+  height:  35rem;
+  background: #e6eaed;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+}
+.container-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.form-input{
+  display: block;
+  width: inherit;
+  padding:12px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  color: #bdbfc0;
+  font-weight: 500;
+  background-color: rgb(249, 252, 255);
+  height: 1.5rem;
+}
+.input-label{
+  padding-bottom: .5rem;
+  padding-top: 1.5rem;
+  font-size: x-small;
+  font-weight: 600;
+  color: rgb(77, 74, 74);
+}
+.details-group{
+  padding-top: 2rem;
+}
