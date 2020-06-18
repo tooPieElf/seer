@@ -1,11 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
+import MainCard from './Components/MainCard'
 function App() {
   return (
     <div className="App">
-
+      <MainCard />
     </div>
   );
 }
