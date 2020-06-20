@@ -5,6 +5,7 @@ import CardSuccess from '../CardSuccess/CardSuccess'
 import CardBankList from "../CardBankList/CardBankList";
 import CardPin from "../CardPIn/CardPin";
 import CardInput from "../CardInput/CardInput";
+import CardSummary from "../CardSummary/CardSummary";
 
 class Card extends Component {
 
@@ -42,6 +43,7 @@ class Card extends Component {
                         handleChange = {this.handleChange}
                         values = {values}
                     />
+
                 );
             case 2:
                 return(
@@ -60,6 +62,13 @@ class Card extends Component {
             case 4:
                 return(
                     <CardPin
+                        nextStep = {this.nextStep}
+                        handleChange = {this.handleChange}
+                    />
+                );
+            case 5:
+                return(
+                    <CardSummary
                         nextStep = {this.nextStep}
                         handleChange = {this.handleChange}
                     />
