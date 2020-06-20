@@ -3,6 +3,8 @@ import CardUserProfile from '../CardUserProfile/CardUserProfile'
 import UserDetails from '../UserDetails/UserDetails'
 import CardSuccess from '../CardSuccess/CardSuccess'
 import CardBankList from "../CardBankList/CardBankList";
+import CardPin from "../CardPIn/CardPin";
+import CardInput from "../CardInput/CardInput";
 
 class Card extends Component {
 
@@ -50,11 +52,17 @@ class Card extends Component {
                 );
             case 3:
                 return(
-                   <h2> step three</h2>
-                )
+                    <CardInput
+                        nextStep = {this.nextStep}
+                        handleChange = {this.handleChange}
+                    />
+                );
             case 4:
                 return(
-                    <CardSuccess />
+                    <CardPin
+                        nextStep = {this.nextStep}
+                        handleChange = {this.handleChange}
+                    />
                 );
         }
     }

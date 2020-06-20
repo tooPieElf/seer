@@ -1,0 +1,32 @@
+.card-input {
+  display: grid;
+  grid-template-columns: 25% 25% 47%;
+  grid-template-rows: 40px;
+  grid-row-gap: 5px;
+  grid-column-gap: 5px;
+  width: 400px;
+  padding-top: 4rem;
+
+  .custom-card-input {
+    border: none;
+    padding-left: 10px;
+    border-radius: 2px;
+    height: 40px;
+
+    &.c-100 {
+      grid-column: 1/-1;
+    }
+
+    &.c-25 {
+      grid-column: 1/2;
+    }
+  }
+  .form-btn {
+    height: 40px;
+    grid-column: 1/-1;
+    border-radius: 2px;
+    color: #fff;
+    background-color: #8fc4f6;
+    border: none;
+  }
+}
