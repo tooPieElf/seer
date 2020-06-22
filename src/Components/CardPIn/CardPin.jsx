@@ -6,39 +6,44 @@ import CardFooter from "../CardFooter/CardFooter";
 import { AiTwotoneBank } from "react-icons/ai";
 import { BsCreditCard, BsArrowLeftRight} from "react-icons/bs";
 import { RiWallet2Line } from "react-icons/ri";
+import SeerbitPay from "react-seerbit";
 
 
-class CardPin extends Component {
-
-    continue = e =>{
-        e.preventDefault();
-        this.props.nextStep();
+ class CardPin extends Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        public_key: "SBTESTPUBK_TMuGegIWWQdEM0OsUrNcoUIfLIfDViD0",
+        amount: 100,
+        tranref: "Pg5" + new Date().getTime(),
+        
+      };
+    }
+  
+    close = close => {
+      console.log(close);
+    };
+    callback = response => {
+      console.log(response);
     };
     render() {
-        const {handleChange} = this.props;
-        return (
-            <>
-                <div className="card-container2">
-                    <CardHeader />
-                    <div className = "container-bottom">
-                        <form className= "form-container">
-                            <div className="info-field">
-                                <input   className="form-input" type="text" name="pin" placeholder="Pin"
-                                         onChange ={handleChange('pin')}
-                                />
-                            </div>
-                            <div className= "button-container">
-                                <button className = "button-primary2" onClick = {this.continue}>pay</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <CardBankdetails labelText="Pay with Bank"/>
-                <CardBankdetails labelText="Pay with Bank Transfer" icon = <BsArrowLeftRight />/>
-                <CardBankdetails labelText="Pay with Bank Wallet" icon = <RiWallet2Line /> />
-                <CardFooter />
-            </>
-        );
+      return (
+        <div>
+          <SeerbitPay
+            className="btn btn-success"
+            tranref={this.state.tranref}
+            currency={"NGN"}
+            description={"test"}
+            country={"NG"}
+            clientappcode="app1"
+            public_key={this.state.public_key}
+            callback={this.callback}
+            close={this.close}
+            amount={this.state.amount}
+          />
+        </div>
+      );
     }
-}
+  }
+
 export default CardPin;

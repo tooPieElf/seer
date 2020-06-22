@@ -20,6 +20,7 @@ class CardInput extends Component {
             <>
             <div className="card-container2">
                 <CardHeader />
+                <div className="center">
                 <form className="card-input">
                     <input
                         type="text"
@@ -51,6 +52,7 @@ class CardInput extends Component {
                     <button className="form-btn" onClick = {this.continue}>
                         Pay</button>
                 </form>
+                </div>
             </div>
             <div className="card-group">
             <CardBankdetails labelText="Pay with Bank"/>

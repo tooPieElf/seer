@@ -31,6 +31,26 @@ class Card extends Component {
         this.setState({[input]: e.target.value});
         console.log(this.state);
     };
+
+    //  paywithSeerbit=()=> {
+    //     SeerbitPay({
+    //             "tranref": new Date().getTime(),
+    //             "currency": "NGN",
+    //             "description": "TEST",
+    //             "country": "NG",
+    //             "amount": "100.00",
+    //             "callbackurl": "https://compassionate-lamarr-d5b41e.netlify.app/",
+    //             "public_key":"SBTESTPUBK_TMuGegIWWQdEM0OsUrNcoUIfLIfDViD0", //replace this with your own public key
+    //         },
+    //         function callback(response) {
+    //             console.log(response) /*response of transaction*/
+    //         },
+    //         function close(close) {
+    //             console.log(close) /*transaction close*/
+    //         })
+    // }
+
+
     render() {
         const{ step }=this.state;
         const{ fullName, email, amount, cardNumber, month, year, cvv, pin} = this.state;
@@ -66,13 +86,13 @@ class Card extends Component {
                         handleChange = {this.handleChange}
                     />
                 );
-            case 5:
-                return(
-                    <CardSummary
-                        nextStep = {this.nextStep}
-                        handleChange = {this.handleChange}
-                    />
-                );
+            // case 5:
+            //     return(
+            //         <CardSummary
+            //             nextStep = {this.nextStep}
+            //             handleChange = {this.handleChange}
+            //         />
+            //     );
         }
     }
 }
